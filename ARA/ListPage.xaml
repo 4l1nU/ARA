@@ -2,11 +2,23 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ARA.ListPage">
-    <ContentPage.Content>
+    <ContentPage.Content xmlns:local="clr-namespace:ARA">
         <StackLayout Margin="20">
             <Editor Placeholder="Adauga detalii legate de programare precum data,ora,medic!"
  Text="{Binding Description}"
- HeightRequest="100" />
+ HeightRequest="100" >
+                <Editor.Behaviors>
+                    <local:ValidationBehaviour />
+                </Editor.Behaviors>
+            </Editor>
+            <Label Text="Clinica ARA" TextDecorations="Underline"  />
+            <Label Text="Doctori si specalizari:" TextDecorations="Underline"  />
+            <Label Text="Dr.Vidican Andreea-Pediatrie" TextDecorations="Underline"  />
+            <Label Text="Dr.Viman Robert-Neurologie" TextDecorations="Underline"  />
+            <Label Text="Dr.Ungureanu Alin-Ginecologie" TextDecorations="Underline"  />
+            <Label Text="Program de lucru:L-V :9-16  S-D:inchis " TextDecorations="Underline"  />
+            
+           
             <Grid>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
